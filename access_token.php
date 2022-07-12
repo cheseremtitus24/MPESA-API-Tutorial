@@ -11,6 +11,7 @@
 	curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
 	curl_setopt($curl, CURLOPT_HEADER, FALSE);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); //Don't output on screen + also don't suppress echoing out to screen
 	curl_setopt($curl, CURLOPT_USERPWD, $consumerKey.':'.$consumerSecret);
 	$result = curl_exec($curl);
 	$status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
